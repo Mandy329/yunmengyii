@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一直都这样 · 路演</title>
+<style>
+  :root{
+    --bg:#0e1116; --ink:#eae7e2; --dim:#98a1ab;
+    --gold:#e0b25c; --seal:#d1495b; --line:#232a33;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.8; -webkit-font-smoothing:antialiased;
+  }
+  section{
+    min-height:100vh; padding:9vh 8vw;
+    display:flex; flex-direction:column; justify-content:center;
+    max-width:1080px; margin:0 auto;
+    border-bottom:1px solid var(--line);
+  }
+  section:last-child{border-bottom:none;}
+  .tag{
+    display:inline-block; font-size:13px; letter-spacing:.22em;
+    color:var(--gold); text-transform:uppercase; margin-bottom:22px;
+  }
+  h1{
+    font-size:clamp(52px,10vw,116px); font-weight:800;
+    letter-spacing:.03em; line-height:1.02;
+  }
+  h2{font-size:clamp(28px,4.4vw,46px); font-weight:800; letter-spacing:.02em; margin-bottom:8px;}
+  h3{font-size:19px; font-weight:700; margin-bottom:8px;}
+  .lead{font-size:clamp(17px,2.1vw,23px); color:var(--ink); opacity:.88; max-width:44ch;}
+  .sub{font-size:15px; color:var(--dim); margin-top:18px;}
+  .quote{
+    font-size:clamp(19px,2.5vw,27px); font-weight:600; color:var(--gold);
+    border-left:3px solid var(--gold); padding-left:20px; margin:26px 0;
+  }
+  .meta{display:flex; gap:28px; flex-wrap:wrap; margin-top:34px; font-size:14px; color:var(--dim);}
+  .meta b{color:var(--ink); font-weight:600;}
+
+  .acts{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:34px;}
+  .card{
+    border:1px solid var(--line); border-radius:14px; padding:24px 22px;
+    background:linear-gradient(180deg,#141922,#101419);
+  }
+  .card .n{font-size:13px; letter-spacing:.2em; color:var(--seal); margin-bottom:10px;}
+  .card p{font-size:14.5px; color:var(--dim); margin-top:10px;}
+  .card em{color:var(--ink); font-style:normal;}
+
+  .grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:30px;}
+  .item{border-left:2px solid var(--gold); padding:4px 0 4px 18px;}
+  .item p{font-size:14.5px; color:var(--dim);}
+
+  ol.big{counter-reset:n; list-style:none; margin-top:30px;}
+  ol.big li{
+    counter-increment:n; position:relative; padding:16px 0 16px 56px;
+    border-top:1px solid var(--line); font-size:16px;
+  }
+  ol.big li::before{
+    content:counter(n); position:absolute; left:0; top:16px;
+    width:34px; height:34px; border-radius:50%;
+    border:1px solid var(--gold); color:var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px; font-weight:700;
+  }
+
+  .end{text-align:center;}
+  .end h2{font-size:clamp(30px,5vw,58px);}
+  .field{
+    margin:36px auto 0; max-width:520px; text-align:left;
+    border:1px dashed var(--line); border-radius:12px; padding:18px 20px;
+    color:var(--dim); font-size:14.5px;
+  }
+  footer{padding:40px 8vw; text-align:center; color:var(--dim); font-size:13px;}
+
+  @media (max-width:760px){
+    .acts{grid-template-columns:1fr;}
+    .grid{grid-template-columns:1fr;}
+  }
+  @media print{
+    body{background:#fff; color:#111;}
+    section{min-height:auto; page-break-after:always; border-bottom:none; padding:40px 0;}
+    .card,.item{background:none;}
+    :root{--dim:#555; --line:#ddd; --ink:#111; --gold:#a8792a; --seal:#b0343f;}
+  }
+</style>
+</head>
+<body>
+
+<section>
+  <span class="tag">Redesign · 重新发明</span>
+  <h1>一直都这样</h1>
+  <p class="lead">一款第一人称 3D 网页游戏。你接手一家快倒闭的「城市流程维修事务所」，走进一座所有人都习惯了的城市，找出那条早就该失效的规定，亲手删掉它，把被它征收的等待时间还给人。</p>
+  <div class="quote">当时那个选择是合理的。但现在，你可以替他重做一次。</div>
+  <div class="meta">
+    <span>赛道 <b>Redesign 重新发明</b></span>
+    <span>队伍 <b>云梦逸</b></span>
+    <span>成果 <b>游戏 Demo · 单文件 HTML</b></span>
+    <span>技术 <b>Three.js · 断网可跑</b></span>
+  </div>
+</section>
+
+<section>
+  <span class="tag">问题</span>
+  <h2>历史遗留规定从不失效</h2>
+  <p class="lead">二十年前打印机坏了，于是要求顾客自带纸质复印件。设备修好后，规定留下了。</p>
+  <p class="lead" style="margin-top:16px;">问题不是没人发现，是<b>发现的人没有改动权</b>。</p>
+  <div class="quote">我们 redesign 的不是某个物件，是一个人面对规则时的位置——从服从者，变成有权修改者。</div>
+</section>
+
+<section>
+  <span class="tag">三幕</span>
+  <h2>一次完整体验</h2>
+  <div class="acts">
+    <div class="card">
+      <div class="n">ACT 01</div>
+      <h3>认命</h3>
+      <p>十二个人把大厅塞满，广播每 5 秒催一次，移速被压到 60%。点「修改规定」只会得到 <em>你还没有资格修改规定。</em></p>
+    </div>
+    <div class="card">
+      <div class="n">ACT 02</div>
+      <h3>觉醒</h3>
+      <p>发现 1998 年的旧通知，倒带回那天——当年打印机坏了，负责人选了「让顾客自带复印件」。这在当时，是合理的。此后规定长出第二个章、第三个窗口、第二台复印机。</p>
+    </div>
+    <div class="card">
+      <div class="n">ACT 03</div>
+      <h3>剥离</h3>
+      <p>删掉那一步，复印机塌成长椅，员工坐下喝水。结算出现四个数字，以及「你为每位市民退还了 X 秒」。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="tag">机制</span>
+  <h2>规则，被做成了可操作的对象</h2>
+  <div class="grid">
+    <div class="item">
+      <h3>三件工具 = 三种被夺回的权力</h3>
+      <p>搬运手套（空间）、修订笔（规则）、退还计时器（时间）。逐个解锁，顺序不可换。</p>
+    </div>
+    <div class="item">
+      <h3>「退还时间」是计价单位</h3>
+      <p>每一次改动，都报出退还了多少秒。</p>
+    </div>
+    <div class="item">
+      <h3>「员工疲劳」指标</h3>
+      <p>机制上阻止效率优化变成负担转嫁——负担不能转移，只能消失。</p>
+    </div>
+    <div class="item">
+      <h3>预算约束与隐藏解法</h3>
+      <p>三条可改的规定 + 六张改造券形成取舍；把盖章台搬到核验台旁，可合并成一窗通办。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="tag">为什么算 Redesign</span>
+  <h2>三条自我约束</h2>
+  <ol class="big">
+    <li>等待不是天经地义的，<b>等待是被设计出来的</b>——所以它可以被重新设计。</li>
+    <li><b>可以检验的减法，才是 Redesign。</b> 结算里的「员工疲劳」专门阻止把负担转移到别处。</li>
+    <li>退还时间的终点不是效率，<b>是一个人本来该有的一天</b>。</li>
+  </ol>
+</section>
+
+<section>
+  <span class="tag">创新点</span>
+  <h2>做出来了的四件事</h2>
+  <ol class="big">
+    <li>把「规定」本身变成<b>可操作、可计量、可删除</b>的对象，而不是嘲讽它的文案。</li>
+    <li>「退还时间」作为核心计价单位，每一次改动都报出退还了多少秒。</li>
+    <li>「员工疲劳」指标：机制上阻止效率优化变成负担转嫁，这是设计上的自我约束。</li>
+    <li>游戏最后把修改权交还给玩家本人——输入框生成可分享的「剥离单」，作品从游戏变成工具。</li>
+  </ol>
+</section>
+
+<section>
+  <span class="tag">现场</span>
+  <h2>打开即玩，60 秒看完</h2>
+  <p class="lead">双击打开 <code>index.html</code>，点「▶ 演示」自动跑完全程。无需安装、无需联网，任何电脑浏览器可开。</p>
+  <p class="sub">手动操作：WASD 移动 · 鼠标转头 · E 与人和设备交互 · 已适配 1280×720 起</p>
+</section>
+
+<section class="end">
+  <span class="tag">最后一屏</span>
+  <h2>现在，轮到你写下那条</h2>
+  <p class="lead" style="margin:20px auto 0;">游戏结束时，输入框请玩家写下自己身边一条「一直都这样」的规定，生成可保存、可分享的剥离单。</p>
+  <div class="field">「请写下你身边一条『一直都这样』的规定。」</div>
+  <div class="meta" style="justify-content:center;">
+    <span>云梦逸 · 两人团队</span>
+    <span>48 小时</span>
+    <span>MIT License</span>
+  </div>
+</section>
+
+<footer>一直都这样 · 流程维修事务所 — 云梦逸</footer>
+
+</body>
+</html>
