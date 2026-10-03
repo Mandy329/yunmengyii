@@ -1,0 +1,26 @@
+# 系统
+.DS_Store
+Thumbs.db
+
+# 依赖与构建产物
+node_modules/
+dist/
+build/
+
+# 环境变量与密钥（绝不入库）
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+
+# 编辑器与日志
+.vscode/
+.idea/
+*.log
+npm-debug.log*
+
+# 本地录制的大体积音频（按需单独提交）
+assets/recordings/
+assets/*.wav
+assets/*.mp3
