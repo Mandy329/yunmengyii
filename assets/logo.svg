@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="一直都这样">
+  <circle cx="120" cy="120" r="94" fill="none" stroke="#d1495b" stroke-width="7"/>
+  <circle cx="120" cy="120" r="78" fill="none" stroke="#d1495b" stroke-width="2" opacity=".6"/>
+  <text x="120" y="108" text-anchor="middle" font-family="PingFang SC, Heiti SC, Microsoft YaHei, sans-serif" font-size="42" font-weight="700" fill="#d1495b">一直</text>
+  <text x="120" y="162" text-anchor="middle" font-family="PingFang SC, Heiti SC, Microsoft YaHei, sans-serif" font-size="42" font-weight="700" fill="#d1495b">都这样</text>
+  <line x1="58" y1="182" x2="182" y2="58" stroke="#e0b25c" stroke-width="11" stroke-linecap="round" opacity=".92"/>
+</svg>
